@@ -23,12 +23,40 @@ public class Main {
         System.out.println(reverseList(integerList));
 
         // method 6
-        List<Object> objectList1 = new ArrayList<>(Arrays.asList(1000, "dollars"));
-        List<Object> objectList2 = new ArrayList<>(Arrays.asList(2000, "euros"));
-        System.out.println(mergeLists(objectList1, objectList2));
+        List<String > stringList1 = new ArrayList<>(Arrays.asList("1000", "dollars"));
+        List<String> stringList2 = new ArrayList<>(Arrays.asList("2000", "euros"));
+        System.out.println(mergeLists(stringList1, stringList2));
 
         // method 7
         System.out.println(withoutElements(integerList, 3));
+
+
+        List<Integer> numbers = new ArrayList<>();
+        Collections.addAll(numbers, 1,2,3,10,20,30);
+
+//        for (int i = 0; i < numbers.size(); i++) {
+//            Integer num = numbers.get(i);
+//            if(num > 10){
+//                numbers.remove(i);
+//                i--;
+//            }
+//        }
+        System.out.println(numbers);
+
+        List<Integer> numbers2 = removeNumber(numbers, 4);
+        System.out.println(numbers2);
+    }
+
+    public static List<Integer> removeNumber (List<Integer> numbers, int n){
+        List<Integer> cutList = new ArrayList<>(numbers);
+        Iterator iterator = cutList.iterator();
+        while ((iterator.hasNext())){
+            int current = (int)iterator.next();
+            if(current > n){
+                iterator.remove();
+            }
+        }
+        return cutList;
     }
 
     private static List<String> removeNameWith4Letters(List<String> names) {
@@ -70,9 +98,10 @@ public class Main {
         return list;
     }
 
-    private static List<Object> mergeLists (List<Object> list1, List<Object> list2){
-        list1.addAll(list2);
-        return list1;
+    private static List<String> mergeLists (List<String> list1, List<String> list2){
+        List<String> mergedList = new ArrayList<>(list1);
+        mergedList.addAll(list2);
+        return mergedList;
     }
 
     public static List<Integer> withoutElements (List <Integer> list, int n){

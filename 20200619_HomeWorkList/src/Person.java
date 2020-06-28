@@ -28,7 +28,7 @@ public class Person {
     public static List<Address> getAddresses(List<Person> persons){
         List<Address> list = new LinkedList<>();
         for (Person p : persons) {
-            list.add(p.address);
+            list.add(p.getAddress());
         }
         return list;
     }
