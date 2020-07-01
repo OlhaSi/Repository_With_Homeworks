@@ -16,12 +16,15 @@ public class Demo {
         System.out.println(result);
     }
 
-    private static String apply(String s) {
-        if (s.length() == 3) {
-            return s.toUpperCase();
+    private static String apply(String str) {
+        Predicate<String> checkWord = s -> s.length() == 3;
+        if (checkWord.test(str)) {
+            return str.toUpperCase();
         }
-        return s;
+        return str;
     }
+
+
 }
 
 
