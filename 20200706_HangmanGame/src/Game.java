@@ -59,7 +59,7 @@ public class Game {
             }
         }
 
-        System.out.print("Word: ");
+        System.out.print("Word:  ");
         System.out.println(inputWord);
     }
 
